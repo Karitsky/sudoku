@@ -1,7 +1,6 @@
 module.exports = function solveSudoku(matrix) {
 
     // каждый проход с нуля считаем сколько осталось нерешенных ячеек
-    moreToGo = 0;
     remaining = {};
 
     // находим пустые ячейки
@@ -45,11 +44,11 @@ module.exports = function solveSudoku(matrix) {
           if (candidates.length == 1) {
             matrix[x][y] = candidates[0];
           } else {
-            remaining[matrix[x][y] = candidates];
-            moreToGo++;
+            matrix[x][y] = candidates;
           }
         }
       }
     }
+    console.log(matrix);
   return matrix;
 }
